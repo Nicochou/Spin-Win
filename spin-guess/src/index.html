@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Spin-Guess</title>
+		<link rel="stylesheet" type="text/css" href="../public/css/style.css" media="all" />
+	</head>
+
+	<body>
+		<!-- INFOS TOP -->
+		<div id="top-infos">
+			<h1>Spin-Guess</h1>
+			<input class="btn btn-primary" type="reset" value="Reset">
+		</div>
+
+		<!-- TABLE NUMBER PICKER -->
+		<div id="num-picker">
+			<h4> Pick a number <h4>
+			<table id="numberTable" class="table">
+			  <tbody>
+			    <tr>
+			      <td class="red">1</td>
+			      <td class="black">2</td>
+			      <td class="red">3</td>
+	  		      <td class="black">4</td>
+			      <td class="red">5</td>
+			      <td class="black">6</td>
+			    <tr>
+			      <td class="red">7</td>
+			      <td class="black">8</td>
+			      <td class="red">9</td>
+	  		      <td class="black">10</td>
+			      <td class="black">11</td>
+			      <td class="red">12</td>
+			    </tr>
+			    <tr>
+			      <td class="black">13</td>
+			      <td class="red">14</td>
+			      <td class="black">15</td>
+	  		      <td class="red">16</td>
+			      <td class="black">17</td>
+			      <td class="red">18</td>
+			    </tr>
+			    <tr>
+			      <td class="red">19</td>
+			      <td class="black">20</td>
+			      <td class="red">21</td>
+	  		      <td class="black">22</td>
+			      <td class="red">23</td>
+			      <td class="black">24</td>
+			    </tr>
+			    <tr>
+			      <td class="red">25</td>
+			      <td class="black">26</td>
+			      <td class="red">27</td>
+	  		      <td class="black">28</td>
+			      <td class="black">29</td>
+			      <td class="red">30</td>
+			    </tr>
+			    <tr>
+			      <td class="black">31</td>
+			      <td class="red">32</td>
+			      <td class="black">33</td>
+	  		      <td class="red">34</td>
+			      <td class="black">35</td>
+			      <td class="red">36</td>
+			    </tr>
+			    <tr>
+			      <td class="green">0</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		<!-- METHODE CARDS -->
+		<div id="method-cards" class="row">
+			<div id="left-container-method" >
+				<!-- CARDS BLACK -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">SIXAIN 1</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="sixain-win-input" class="form-control" type="text" value="0" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="sixain-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="sixain-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="sixain-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="sixain-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="sixain-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">1 - 2 - 3 - 4 - 5 - 6</p>
+				</div>
+				<!-- CARDS RED -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">SIXAIN 2</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="red-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="red-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="red-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="red-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="red-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="red-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">7 - 8 - 9 - 10 - 11 - 12</p>
+				</div>
+				<!-- CARDS ODD -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">SIXAIN 3</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="odd-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="odd-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="odd-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="odd-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="odd-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="odd-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">13 - 14 - 15 - 16 - 17 - 18</p>
+				</div>
+				<!-- CARDS EVEN -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">SIXAIN 4</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="even-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="even-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="even-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="even-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="even-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="even-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">19 - 20 - 21 - 22 - 23 - 24</p>
+				</div>
+				<!-- CARDS SMALL -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">SIXAIN 5</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="small-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="small-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="small-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="small-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="small-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="small-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">25 - 26 - 27 - 28 - 29 - 30</p>
+				</div>
+				<!-- CARDS BIG -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">SIXAIN 6</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="big-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="big-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="big-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="big-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="big-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="big-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">31 - 32 - 33 - 34 - 35 - 36</p>
+				</div>
+				<!-- CARDS EVEN -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">COLONNE 1</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="even-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="even-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="even-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="even-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="even-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="even-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">3 - 6 - 9 - 12 - 15 - 18 - 21 - 24 - 27 - 30 - 33 - 36</p>
+				</div>
+				<!-- CARDS SMALL -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">COLONNE 2</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="small-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="small-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="small-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="small-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="small-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="small-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">2 - 5 - 8 - 11 - 14 - 17 - 20 - 23 - 26 - 29 - 32 - 35</p>
+				</div>
+				<!-- CARDS BIG -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">COLONNE 3</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="big-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="big-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="big-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="big-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="big-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="big-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">1 - 4 - 7 - 10 - 13 - 16 - 19 - 22 - 25 - 28 - 31 - 34</p>
+				</div>
+			</div>
+			<!-- LEFT METHODS -->
+			<div id="left-container-method" >
+				<!-- CARDS BLACK -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">BLACK</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="black-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="black-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="black-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="black-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="black-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="black-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">2 - 4 - 6 - 8 - 10 - 11 - 13 - 15 - 17 - 20 - 22 - 24  - 28 - 29 - 31 - 33 - 35</p>
+				</div>
+				<!-- CARDS RED -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">RED</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="red-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="red-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="red-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="red-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="red-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="red-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">1 - 3 - 5 - 7 - 9 - 12 - 14 - 16 - 18 - 19 - 21 - 23 - 25 - 27 - 30 - 32 - 34 - 36</p>
+				</div>
+				<!-- CARDS ODD -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">ODD</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="odd-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="odd-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="odd-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="odd-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="odd-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="odd-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">1 - 3 - 5 - 7 - 9 - 11 - 13 - 15 - 17 - 19 - 21 - 23 - 25 - 27 - 29 - 31 - 33 - 35</p>
+				</div>
+				<!-- CARDS EVEN -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">EVEN</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="even-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="even-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="even-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="even-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="even-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="even-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">2 - 4 - 6 - 8 - 10 - 12 - 14 - 16 - 18 - 20 - 22 - 24  - 28 - 30 - 32 - 34 - 36</p>
+				</div>
+				<!-- CARDS SMALL -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">SMALL</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="small-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="small-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="small-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="small-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="small-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="small-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 11 - 12  - 13 - 14 - 15 - 16 - 17 - 18</p>
+				</div>
+				<!-- CARDS BIG -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">BIG</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="big-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="big-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="big-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="big-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="big-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="big-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">19 - 20 - 21 - 22 - 23 - 24 - 25 - 26 - 27 - 28 - 29 - 30  - 31 - 32 - 33 - 34 - 35 - 36</p>
+				</div>
+			</div>
+			<div id="left-container-method" >
+				<!-- CARDS BLACK -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">VOISIN DU ZERO</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="black-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="black-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="black-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="black-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="black-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="black-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">22 - 18 - 29 - 7 - 28 - 12 - 35 - 3 - 26 - 0 - 32 - 15 - 19 - 4 - 21 - 2 - 25</p>
+				</div>
+				<!-- CARDS RED -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">TIERS DU CYLINDRE</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="red-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="red-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="red-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="red-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="red-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="red-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">33 - 16 - 24 - 5 - 10 - 23 - 8 - 30 - 11 - 36 - 13 - 27</p>
+				</div>
+				<!-- CARDS ODD -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">ORPHELINS</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="odd-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="odd-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="odd-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="odd-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="odd-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="odd-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">9 - 31 - 14 - 20 - 17 - 34 - 6</p>
+				</div>
+				<!-- CARDS EVEN -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">1ERE DOUZAINE</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="even-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="even-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="even-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="even-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="even-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="even-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - 11 - 12</p>
+				</div>
+				<!-- CARDS SMALL -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">2EME DOUZAINE</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="small-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="small-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="small-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="small-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="small-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="small-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">13 - 14- 15 - 16 - 17 - 18 - 19 - 20 - 21 - 22 - 23 - 24</p>
+				</div>
+				<!-- CARDS BIG -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">3EME DOUZAINE</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="big-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="big-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="big-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="big-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="big-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="big-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">25 - 26 - 27 - 28 - 29 - 30 - 31 - 32 - 33 - 34 - 35 - 36</p>
+				</div>
+				<!-- CARDS BIG -->
+				<div class="card col-md-6" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">SECRETE 1</h5>
+				  </div>
+				  <ul class="list-group list-group-flush">
+				    <li class="list-group-item win-methode">Win<input id="big-win-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item lose-methode">Lose<input id="big-lose-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ratio-methode">Ratio<input id="big-ratio-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-methode">Ecart<input id="big-ecart-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-max-methode">Ecart Max<input id="big-ecart-max-input" class="form-control" type="text" value="" readonly></input></li>
+				    <li class="list-group-item ecart-histo-methode">Ecart Histo<input id="big-ecart-histo-input" class="form-control" type="text" value="" readonly></input></li>
+				  </ul>
+				  <p class="list-number-example">3 - 6 - 8 - 9 - 11 - 12 - 13 - 15 - 23 - 24 - 26 - 32 - 36</p>
+				</div>
+			</div>
+		</div>
+		<!-- FIN METHODE CARDS -->
+
+
+		<!-- SCRIPTS -->
+		<!-- CDN JQUERY -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+		<!-- CDN BOOTSTRAP -->
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<!-- Optional theme -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+			<!-- Latest compiled and minified JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- SCRIPTS PERSO -->
+			<script src="../public/js/spinguess.js"> </script> 
+	</body>
+</html>
